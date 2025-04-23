@@ -110,3 +110,11 @@ header #main-text{
         padding: 1px;
     }
 }
+
+footer{
+    background-color: #070738;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 5px;
+}
