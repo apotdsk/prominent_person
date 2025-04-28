@@ -6,6 +6,10 @@ body, h1 {
 
 body {
     background-color: #EDE8D0;
+    /* position: relative; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -21,7 +25,7 @@ header {
 header .header-lower {
     display: flex;
     justify-content: center;
-    padding: 0 8%;
+    padding: 0 10%;
 }
 
 #header-image img {
@@ -86,9 +90,18 @@ header #main-text{
     text-align: center;
 }
 
+#description-from-header {
+    font-family: "Montserrat", sans-serif;
+    display: none;
+}
+
 @media screen and (max-width: 900px) {
     #header-description p {
       display: none;
+    }
+    #description-from-header {
+        display: block;
+        font-size: clamp(0.85rem, 1.35vw, 1.1rem);
     }
 }
 
@@ -111,10 +124,62 @@ header #main-text{
     }
 }
 
+main {
+    flex: 1;
+    padding: 0 8%; 
+}
+
 footer{
     background-color: #070738;
-    position: absolute;
+    /* position: absolute;
     width: 100%;
-    bottom: 0;
-    height: 5px;
+    bottom: 0; */
+    height: 1rem;
+}
+
+.main-description {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+    background-color: rgb(200, 192, 192);
+    padding: 2px 2rem;
+}
+
+.content, .details {
+    font-family: "Sansation", sans-serif;
+    font-size: clamp(0.85rem, 1.35vw, 1.1rem);
+}
+
+.details p{
+    font-weight: 600;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    text-align: center;
+}
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+.box {
+    background-color: rgb(188, 182, 182);
+    margin-right: 2rem;
+    padding: 0.5rem;
+}
+
+#box3 {
+    margin-right: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .details {
+        flex-direction: column;
+        margin: 1rem 1rem;
+    }
+    .box {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    #box3 {
+        margin-right: 0;
+    }
 }
