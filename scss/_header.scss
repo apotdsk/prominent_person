@@ -1,0 +1,105 @@
+header {
+    background: linear-gradient(
+        var(--additional-background-color) 0%,
+        var(--additional-background-color) 75%,
+        var(--main-background-color) 75%,
+        var(--main-background-color) 100%
+    );
+    color: aliceblue;
+}
+
+header .header-lower {
+    display: flex;
+    justify-content: center;
+    padding: 0 10%;
+}
+
+#header-image img {
+    width: 21vw;
+    height: 21vw;
+    border-radius: 50%;
+}
+
+header #main-text {
+    text-align: center;
+    margin-bottom: 3px;
+    padding: 0.3rem 0;
+    font-size: 2.2rem;
+    font-family: var(--header-font);
+}
+
+#header-addition img {
+    width: 14vw;
+    height: 9vw;
+    border-radius: 25%;
+}
+
+#header-description,
+#header-addition,
+#header-image {
+    width: 33%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 1px;
+    font-family: var(--additional-font);
+}
+
+#header-addition,
+#header-image {
+    justify-content: center;
+}
+
+#header-description {
+    padding-top: 2rem;
+}
+
+#years-text,
+#years-number {
+    margin: 0;
+    text-align: center;
+}
+
+#years-number {
+    font-size: clamp(1.2rem, 3.9vw, 2rem);
+}
+
+#years-text {
+    font-size: clamp(0.6rem, 2vw, 0.75rem);
+}
+
+#header-description p {
+    font-size: clamp(0.5rem, 0.9vw, 0.65rem);
+    padding: 0 1rem;
+    color: rgb(192 191 191);
+    text-align: justify;
+}
+
+#header-addition h3 {
+    font-size: clamp(0.8rem, 2.5vw, 1.5rem);
+    text-align: center;
+}
+
+@media screen and (width <= 500px) {
+    #header-description,
+    #header-addition,
+    #header-image {
+        padding: 0.2rem;
+        justify-content: flex-start;
+    }
+
+    #years-number {
+        font-size: 0.9rem;
+    }
+
+    #header-addition h3 {
+        margin-bottom: 1px;
+        margin-top: 1px;
+    }
+
+    header #main-text {
+        font-size: 1.5rem;
+        margin: 0;
+        padding: 1px;
+    }
+}

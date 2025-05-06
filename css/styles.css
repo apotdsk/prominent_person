@@ -1,25 +1,9 @@
-body,
-h1 {
-    margin: 0;
-    padding: 0;
-    letter-spacing: 0.02em;
-}
-
-body {
-    background-color: #ede8d0;
-
-    /* position: relative; */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
 header {
     background: linear-gradient(
-        #070738 0%,
-        #070738 75%,
-        #ede8d0 75%,
-        #ede8d0 100%
+        var(--additional-background-color) 0%,
+        var(--additional-background-color) 75%,
+        var(--main-background-color) 75%,
+        var(--main-background-color) 100%
     );
     color: aliceblue;
 }
@@ -41,7 +25,7 @@ header #main-text {
     margin-bottom: 3px;
     padding: 0.3rem 0;
     font-size: 2.2rem;
-    font-family: Oswald, sans-serif;
+    font-family: var(--header-font);
 }
 
 #header-addition img {
@@ -58,7 +42,7 @@ header #main-text {
     align-items: center;
     flex-direction: column;
     padding: 1rem 1px;
-    font-family: Montserrat, sans-serif;
+    font-family: var(--additional-font);
 }
 
 #header-addition,
@@ -84,12 +68,6 @@ header #main-text {
     font-size: clamp(0.6rem, 2vw, 0.75rem);
 }
 
-.details p {
-    font-weight: 600;
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
-    text-align: center;
-}
-
 #header-description p {
     font-size: clamp(0.5rem, 0.9vw, 0.65rem);
     padding: 0 1rem;
@@ -100,22 +78,6 @@ header #main-text {
 #header-addition h3 {
     font-size: clamp(0.8rem, 2.5vw, 1.5rem);
     text-align: center;
-}
-
-#description-from-header {
-    font-family: Montserrat, sans-serif;
-    display: none;
-}
-
-@media screen and (width <= 900px) {
-    #header-description p {
-        display: none;
-    }
-
-    #description-from-header {
-        display: block;
-        font-size: clamp(0.85rem, 1.35vw, 1.1rem);
-    }
 }
 
 @media screen and (width <= 500px) {
@@ -142,30 +104,78 @@ header #main-text {
     }
 }
 
+footer {
+    background-color: var(--additional-background-color);
+
+    /* position: absolute;
+  width: 100%;
+  bottom: 0; */
+    height: 1rem;
+}
+
+:root {
+    --main-background-color: #ede8d0;
+    --additional-background-color: #070738;
+    --first-shadow: rgb(200 192 192);
+    --content-shadow: rgb(188 182 182);
+    --main-font: sansation, sans-serif;
+    --additional-font: montserrat, sans-serif;
+    --header-font: oswald, sans-serif;
+}
+
+body,
+h1 {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.02em;
+}
+
+body {
+    background-color: var(--main-background-color);
+
+    /* position: relative; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.details p {
+    font-weight: 600;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    text-align: center;
+}
+
+#description-from-header {
+    font-family: var(--additional-font);
+    display: none;
+}
+
+@media screen and (width <= 900px) {
+    #header-description p {
+        display: none;
+    }
+
+    #description-from-header {
+        display: block;
+        font-size: clamp(0.85rem, 1.35vw, 1.1rem);
+    }
+}
+
 main {
     flex: 1;
     padding: 0 8%;
 }
 
-footer {
-    background-color: #070738;
-
-    /* position: absolute;
-    width: 100%;
-    bottom: 0; */
-    height: 1rem;
-}
-
 .main-description {
-    font-family: Montserrat, sans-serif;
+    font-family: var(--additional-font);
     font-size: clamp(0.75rem, 1.2vw, 0.9rem);
-    background-color: rgb(200 192 192);
+    background-color: var(--first-shadow);
     padding: 2px 2rem;
 }
 
 .content,
 .details {
-    font-family: Sansation, sans-serif;
+    font-family: var(--main-font);
     font-size: clamp(0.85rem, 1.35vw, 1.1rem);
 }
 
@@ -176,7 +186,7 @@ footer {
 }
 
 .box {
-    background-color: rgb(188 182 182);
+    background-color: var(--content-shadow);
     margin-right: 2rem;
     padding: 0.5rem;
 }
